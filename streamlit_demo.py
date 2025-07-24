@@ -55,8 +55,8 @@ if uploaded_files:
                                     .sort_values('rank_change', ascending=False)
 
                     unique_changes = sorted(df['rank_change'].unique(), reverse=True)
-                    top3_vals = unique_changes[:3]
-                    bottom3_vals = unique_changes[-3:]
+                    top3_vals = unique_changes[:5]
+                    bottom3_vals = unique_changes[-5:]
 
                     result_sorted = result_sorted.rename(columns={
                         "label":"診所名稱",
@@ -107,3 +107,6 @@ if uploaded_files:
 
             except Exception as e:
                 st.error(f"分析失敗：請確認上傳檔案是否正確")
+
+
+
